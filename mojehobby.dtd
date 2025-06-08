@@ -1,0 +1,56 @@
+<!ATTLIST hobby
+        xmlns:xsi CDATA #IMPLIED
+        xsi:noNamespaceSchemaLocation CDATA #IMPLIED
+        >
+
+<!ENTITY % TakNie "(tak|nie)">
+<!ENTITY % Status "(zdobyty|planowany)">
+
+<!ELEMENT hobby (informacje, zdobyte, planowane)>
+
+<!ELEMENT informacje (zainteresowanie, opis_glowny, autor)>
+<!ELEMENT zainteresowanie (#PCDATA)>
+<!ELEMENT opis_glowny (#PCDATA)>
+<!ELEMENT autor (#PCDATA)>
+<!ATTLIST autor
+        student %TakNie; #REQUIRED
+        >
+
+<!ELEMENT zdobyte (pasmo_górskie)>
+<!ELEMENT pasmo_górskie (tatry, karkonosze, karpaty)>
+<!ELEMENT tatry (szczyt+)>
+<!ELEMENT karkonosze (szczyt+)>
+<!ELEMENT karpaty (szczyt+)>
+
+<!ELEMENT szczyt (nazwa, wysokość, opis, link, zdjecie)>
+<!ATTLIST szczyt
+        trudność (łatwa|średnia|wysoka) #REQUIRED
+        najwyższy %TakNie; #REQUIRED
+        status %Status; #REQUIRED
+        >
+
+<!ELEMENT nazwa (#PCDATA)>
+<!ELEMENT wysokość (#PCDATA)>
+<!ELEMENT opis (#PCDATA)>
+<!ELEMENT link (#PCDATA)>
+<!ELEMENT zdjecie (#PCDATA)>
+
+<!ELEMENT planowane (kontynent)>
+<!ELEMENT kontynent (afryka, europa, azja)>
+<!ELEMENT afryka (szczyt_planowany+)>
+<!ELEMENT europa (szczyt_planowany+)>
+<!ELEMENT azja (szczyt_planowany+)>
+
+<!ELEMENT szczyt_planowany (nazwa, wysokość, kraje, zdjecie)>
+<!ATTLIST szczyt_planowany
+        korona_ziemi %TakNie; "tak"
+        status %Status; #REQUIRED
+        rok CDATA #REQUIRED
+        >
+
+<!ELEMENT kraje (kraj+)>
+<!ATTLIST kraje
+        graniczny %TakNie; #REQUIRED
+        >
+
+<!ELEMENT kraj (#PCDATA)>

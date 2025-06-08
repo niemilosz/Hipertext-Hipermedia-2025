@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:simpleType name="typ_Trudnosci">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="łatwa"/>
+            <xs:enumeration value="średnia"/>
+            <xs:enumeration value="wysoka"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="typ_TakNie">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="tak"/>
+            <xs:enumeration value="nie"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="typ_Statusu">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="zdobyty"/>
+            <xs:enumeration value="planowany"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="typ_Roku">
+        <xs:restriction base="xs:gYear">
+            <xs:minInclusive value="2024"/>
+            <xs:maxInclusive value="2100"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="typ_URL">
+        <xs:restriction base="xs:anyURI">
+            <xs:pattern value="https?://.+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="typ_Tekstu">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="200"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+
+
+
+
+    <xs:complexType name="typ_Kraje">
+        <xs:sequence>
+            <xs:element name="kraj" type="xs:string" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="graniczny" type="typ_TakNie" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="typ_Autor">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="student" type="typ_TakNie" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="typ_Nazwa">
+        <xs:simpleContent>
+            <xs:extension base="typ_Tekstu"/>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="typ_Wysokosc">
+        <xs:simpleContent>
+            <xs:extension base="xs:positiveInteger"/>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="typ_Opis">
+        <xs:simpleContent>
+            <xs:extension base="typ_Tekstu"/>
+        </xs:simpleContent>
+    </xs:complexType>
+
+
+
+
+
+    <xs:group name="grupa_Szczytow">
+        <xs:sequence>
+            <xs:element name="nazwa" type="typ_Nazwa"/>
+            <xs:element name="wysokość" type="typ_Wysokosc"/>
+            <xs:element name="opis" type="typ_Opis"/>
+            <xs:element name="link" type="typ_URL"/>
+            <xs:element name="zdjecie" type="typ_URL"/>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:attributeGroup name="atrybuty_Szczytow">
+        <xs:attribute name="trudność" type="typ_Trudnosci" use="required"/>
+        <xs:attribute name="najwyższy" type="typ_TakNie" use="required"/>
+        <xs:attribute name="status" type="typ_Statusu" use="required"/>
+    </xs:attributeGroup>
+
+
+
+
+
+    <xs:complexType name="typ_ListaSzczytow">
+        <xs:sequence>
+            <xs:element name="szczyt" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:group ref="grupa_Szczytow"/>
+                    <xs:attributeGroup ref="atrybuty_Szczytow"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="typ_ListaPlanowanych">
+        <xs:sequence>
+            <xs:element name="szczyt_planowany" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="nazwa" type="typ_Nazwa"/>
+                        <xs:element name="wysokość" type="typ_Wysokosc"/>
+                        <xs:element name="kraje" type="typ_Kraje"/>
+                        <xs:element name="zdjecie" type="typ_URL"/>
+                    </xs:sequence>
+                    <xs:attribute name="korona_ziemi" type="typ_TakNie" use="required"/>
+                    <xs:attribute name="status" type="typ_Statusu" use="required"/>
+                    <xs:attribute name="rok" type="typ_Roku" use="required"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+
+
+
+
+    <xs:element name="hobby">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="informacje">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="zainteresowanie" type="typ_Tekstu"/>
+                            <xs:element name="opis_glowny" type="typ_Tekstu"/>
+                            <xs:element name="autor" type="typ_Autor"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="zdobyte">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="pasmo_górskie">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="tatry" type="typ_ListaSzczytow"/>
+                                        <xs:element name="karkonosze" type="typ_ListaSzczytow"/>
+                                        <xs:element name="karpaty" type="typ_ListaSzczytow"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="planowane">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="kontynent">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="afryka" type="typ_ListaPlanowanych"/>
+                                        <xs:element name="europa" type="typ_ListaPlanowanych"/>
+                                        <xs:element name="azja" type="typ_ListaPlanowanych"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

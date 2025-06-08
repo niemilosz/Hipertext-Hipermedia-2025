@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="mojehobby.xsl"?>
+<!DOCTYPE hobby SYSTEM "mojehobby.dtd">
+<hobby xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="mojehobby.xsd">
+
+    <informacje>
+        <zainteresowanie>
+            Turystyka górska
+        </zainteresowanie>
+        <opis_glowny>
+            Strona ukazuje moje hobby, czyli turystykę górską, przedstawiam jedne z piękniejszych z polskich szczytów oraz moje plany co do zdobywania kolejnych, tym razem poza Polską.
+        </opis_glowny>
+        <autor student="tak">
+            Miłosz Nieżurawski, s202375
+        </autor>
+    </informacje>
+
+    <zdobyte>
+        <pasmo_górskie>
+            <tatry>
+                <szczyt trudność="wysoka" najwyższy="tak" status="zdobyty">
+                    <nazwa>Rysy</nazwa>
+                    <wysokość>2499</wysokość>
+                    <opis>Najwyższy szczyt Tatr i Polski.</opis>
+                    <link>https://pl.wikipedia.org/wiki/Rysy</link>
+                    <zdjecie>https://upload.wikimedia.org/wikipedia/commons/8/87/Rysy%2C_szczyt.jpg</zdjecie>
+                </szczyt>
+                <szczyt trudność="średnia" najwyższy="nie" status="zdobyty">
+                    <nazwa>Kasprowy Wierch</nazwa>
+                    <wysokość>1987</wysokość>
+                    <opis>Jeden z popularniejszych szczytów z kolejką linową.</opis>
+                    <link>https://www.pkl.pl/kasprowy-wierch/kasprowy.html</link>
+                    <zdjecie>https://i-tatry.pl/wp-content/uploads/2014/11/szlak-kasprowy-wierch-przelecz-liliowe-7.jpg</zdjecie>
+                </szczyt>
+                <szczyt trudność="średnia" najwyższy="nie" status="zdobyty">
+                    <nazwa>Giewont</nazwa>
+                    <wysokość>1894</wysokość>
+                    <opis>Symbol Zakopanego który na swoim szczycie posiada metalowy krzyż.</opis>
+                    <link>https://pl.wikipedia.org/wiki/Giewont</link>
+                    <zdjecie>https://i-tatry.pl/wp-content/uploads/2014/10/giewont-1.jpg</zdjecie>
+                </szczyt>
+            </tatry>
+            <karkonosze>
+                <szczyt trudność="średnia" najwyższy="tak" status="zdobyty">
+                    <nazwa>Śnieżka</nazwa>
+                    <wysokość>1603</wysokość>
+                    <opis>Najwyższy szczyt Karkonoszy.</opis>
+                    <link>https://pl.wikipedia.org/wiki/%C5%9Anie%C5%BCka</link>
+                    <zdjecie>https://slowroad.pl/wp-content/uploads/sites/23/2023/09/G230182.jpg</zdjecie>
+                </szczyt>
+                <szczyt trudność="średnia" najwyższy="nie" status="zdobyty">
+                    <nazwa>Śnieżnik</nazwa>
+                    <wysokość>1425</wysokość>
+                    <opis>Szczyt znajdujący się na granicy polsko-czeskiej.</opis>
+                    <link>https://pl.wikipedia.org/wiki/%C5%9Anie%C5%BCnik_(g%C3%B3ra)</link>
+                    <zdjecie>https://plannawypad.pl/wp-content/uploads/2024/01/snieznik-dron-9.jpg</zdjecie>
+                </szczyt>
+                <szczyt trudność="łatwa" najwyższy="nie" status="zdobyty">
+                    <nazwa>Wielka Sowa</nazwa>
+                    <wysokość>1015</wysokość>
+                    <opis>Najwyższy szczyt Gór Sowich.</opis>
+                    <link>https://pl.wikipedia.org/wiki/Wielka_Sowa</link>
+                    <zdjecie>https://trasynawczasy.pl/1054-lightbox_default/wielka-sowa-petla-z-przeleczy-walimskiej.jpg</zdjecie>
+                </szczyt>
+            </karkonosze>
+            <karpaty>
+                <szczyt trudność="wysoka" najwyższy="tak" status="zdobyty">
+                    <nazwa>Babia Góra</nazwa>
+                    <wysokość>1725</wysokość>
+                    <opis>Królowa Beskidów - najwyższy szczyt Beskidów</opis>
+                    <link>https://pl.wikipedia.org/wiki/Babia_G%C3%B3ra</link>
+                    <zdjecie>https://gadulec.pl/wp-content/uploads/2020/05/DSC02880.jpg</zdjecie>
+                </szczyt>
+                <szczyt trudność="średnia" najwyższy="nie" status="zdobyty">
+                    <nazwa>Pilsko</nazwa>
+                    <wysokość>1557</wysokość>
+                    <opis>Drugi najwyższy szczyt Beskidów</opis>
+                    <link>https://pl.wikipedia.org/wiki/Pilsko</link>
+                    <zdjecie>https://hasajacezajace.com/wp-content/uploads/2021/09/Pilsko-43.jpg</zdjecie>
+                </szczyt>
+                <szczyt trudność="średnia" najwyższy="nie" status="zdobyty">
+                    <nazwa>Klimczok</nazwa>
+                    <wysokość>1117</wysokość>
+                    <opis>Popularny szczyt w Beskidzie Śląskim - Polecam</opis>
+                    <link>https://pl.wikipedia.org/wiki/Klimczok</link>
+                    <zdjecie>https://szlakowe.pl/wp-content/uploads/2021/10/Szczyt-Klimczok-jesienn%C4%85-por%C4%85-widok-na-Beskid-%C5%BBywiecki-Babi%C4%85-G%C3%B3r%C4%99-oraz-Tatry.jpg</zdjecie>
+                </szczyt>
+            </karpaty>
+        </pasmo_górskie>
+    </zdobyte>
+
+    <planowane>
+        <kontynent>
+            <afryka>
+                <szczyt_planowany korona_ziemi="tak" status="planowany" rok="2026">
+                    <nazwa>Kilimandżaro</nazwa>
+                    <wysokość>5885</wysokość>
+                    <kraje graniczny="nie">
+                        <kraj>Tanzania</kraj>
+                    </kraje>
+                    <zdjecie>https://drytooling.pl/images/igallery/resized/kilimandzaro-91/kilimandzaro-6-5000-4000-100-c.jpg</zdjecie>
+                </szczyt_planowany>
+            </afryka>
+            <europa>
+                <szczyt_planowany korona_ziemi="tak" status="planowany" rok="2028">
+                    <nazwa>Mont Blanc</nazwa>
+                    <wysokość>4806</wysokość>
+                    <kraje graniczny="tak">
+                        <kraj>Francja</kraj>
+                        <kraj>Włochy</kraj>
+                    </kraje>
+                    <zdjecie>https://upload.wikimedia.org/wikipedia/commons/d/d7/Mont_Blanc_from_Punta_Helbronner%2C_2010_July.JPG</zdjecie>
+                </szczyt_planowany>
+            </europa>
+            <azja>
+                <szczyt_planowany korona_ziemi="tak" status="planowany" rok="2035">
+                    <nazwa>Mount Everest</nazwa>
+                    <wysokość>8848</wysokość>
+                    <kraje graniczny="tak">
+                        <kraj>Nepal</kraj>
+                        <kraj>Chiny</kraj>
+                    </kraje>
+                    <zdjecie>https://bi.im-g.pl/im/68/75/1e/z31937384Q,Chca-zdobyc-Mount-Everest-w-7-dni---Jestesmy-zajet.jpg</zdjecie>
+                </szczyt_planowany>
+            </azja>
+        </kontynent>
+    </planowane>
+
+</hobby>

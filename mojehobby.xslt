@@ -102,10 +102,10 @@
     <!-- Nazwany szablon -->
     <xsl:template name="pokazZdobyte">
         <h2>Zdobyte szczyty</h2>
-        <xsl:for-each select="/hobby/zdobyte/pasmo_gorskie/*">
+        <xsl:for-each select="/hobby/zdobyte/pasmo_górskie/*">
             <h3><xsl:value-of select="name()"/></h3>
             <xsl:for-each select="szczyt">
-                <xsl:sort select="wysokosc" data-type="number" order="descending"/>
+                <xsl:sort select="wysokość" data-type="number" order="descending"/>
                 <div class="szczyt">
                     <div class="nazwa-szczytu">
                         <xsl:number level="any" format="1."/> <xsl:value-of select="nazwa"/>
@@ -113,11 +113,11 @@
                     <div class="szczyt-content">
                         <img src="{zdjecie}" alt="{nazwa}"/>
                         <div class="szczyt-opis">
-                            <p><b>Wysokosc:</b> <xsl:value-of select="wysokosc"/> m n.p.m.</p>
+                            <p><b>Wysokosc:</b> <xsl:value-of select="wysokość"/> m n.p.m.</p>
                             <p><xsl:value-of select="opis"/></p>
-                            <p><b>Trudnosc:</b> <xsl:value-of select="@trudnosc"/></p>
+                            <p><b>Trudnosc:</b> <xsl:value-of select="@trudność"/></p>
                             <p><b>Status:</b> <xsl:value-of select="@status"/></p>
-                            <xsl:if test="@najwyzszy='tak'">
+                            <xsl:if test="@najwyższy='tak'">
                                 <p style="color:#005599;">To najwyzszy szczyt w tym pasmie gorskim!</p>
                             </xsl:if>
                             <a href="{link}" target="_blank">Zobacz wiecej</a>
@@ -141,7 +141,7 @@
                     <div class="szczyt-content">
                         <img src="{zdjecie}" alt="{nazwa}"/>
                         <div class="szczyt-opis">
-                            <p><b>Wysokosc:</b> <xsl:value-of select="wysokosc"/> m n.p.m.</p>
+                            <p><b>Wysokosc:</b> <xsl:value-of select="wysokość"/> m n.p.m.</p>
                             <p><b>Kraje:</b>
                                 <xsl:for-each select="kraje/kraj">
                                     <xsl:value-of select="."/>

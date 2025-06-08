@@ -17,12 +17,12 @@
                 <style>
                     body {
                     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                    background: linear-gradient(to bottom, #eef2f3, #ffffff);
+                    background: linear-gradient(to bottom, #A9BCD0, #D8DBE2);
                     margin: 0;
                     padding: 20px;
                     }
                     h1, h2, h3 {
-                    color: #0d3b66;
+                    color: #1B1B1E;
                     text-align: center;
                     margin-bottom: 10px;
                     }
@@ -56,7 +56,7 @@
                     font-size: 1.6em;
                     font-weight: bold;
                     margin-bottom: 10px;
-                    color: #1c4e80;
+                    color: #1B1B1E;
                     }
                     .szczyt-content {
                     display: flex;
@@ -114,12 +114,12 @@
                     <div class="szczyt-content">
                         <img src="{zdjecie}" alt="{nazwa}"/>
                         <div class="szczyt-opis">
-                            <p>Wysokość: <xsl:value-of select="wysokość"/> m n.p.m.</p>
+                            <p><b>Wysokość:</b> <xsl:value-of select="wysokość"/> m n.p.m.</p>
                             <p><xsl:value-of select="opis"/></p>
-                            <p>Trudność: <xsl:value-of select="@trudność"/></p>
-                            <p>Status: <xsl:value-of select="@status"/></p>
+                            <p><b>Trudność:</b> <xsl:value-of select="@trudność"/></p>
+                            <p><b>Status:</b> <xsl:value-of select="@status"/></p>
                             <xsl:if test="@najwyższy='tak'">
-                                <p style="color:green;">To najwyższy szczyt w paśmie!</p>
+                                <p style="color:#005599;">To najwyższy szczyt w tym pasmie gorskim!</p>
                             </xsl:if>
                             <a href="{link}" target="_blank">Zobacz więcej</a>
                         </div>
@@ -142,8 +142,8 @@
                     <div class="szczyt-content">
                         <img src="{zdjecie}" alt="{nazwa}"/>
                         <div class="szczyt-opis">
-                            <p>Wysokość: <xsl:value-of select="wysokość"/> m n.p.m.</p>
-                            <p>Kraje:
+                            <p><b>Wysokość:</b> <xsl:value-of select="wysokość"/> m n.p.m.</p>
+                            <p><b>Kraje:</b>
                                 <xsl:for-each select="kraje/kraj">
                                     <xsl:value-of select="."/>
                                     <xsl:if test="position() != last()"> – </xsl:if>
@@ -151,10 +151,10 @@
                             </p>
                             <xsl:choose>
                                 <xsl:when test="kraje/@graniczny='tak'">
-                                    <p>Leży na granicy!</p>
+                                    <p>Ten szczyt lezy na granicy dwoch panstw</p>
                                 </xsl:when>
                                 <xsl:otherwise>
-                                    <p>Leży w jednym kraju.</p>
+                                    <p>Ten szczyt leży w jednym kraju.</p>
                                 </xsl:otherwise>
                             </xsl:choose>
                         </div>

@@ -114,13 +114,13 @@
                         <img src="{zdjecie}" alt="{nazwa}"/>
                         <div class="szczyt-opis">
                             <p><b>Wysokosc:</b> <xsl:value-of select="wysokość"/> m n.p.m.</p>
-                            <p><xsl:value-of select="opis"/></p>
-                            <p><b>Trudnosc:</b> <xsl:value-of select="@trudność"/></p>
-                            <p><b>Status:</b> <xsl:value-of select="@status"/></p>
                             <xsl:if test="@najwyższy='tak'">
                                 <p style="color:#005599;">To najwyzszy szczyt w tym pasmie gorskim!</p>
                             </xsl:if>
-                            <a href="{link}" target="_blank">Zobacz wiecej</a>
+                            <p><b>Trudnosc:</b> <xsl:value-of select="@trudność"/></p>
+                            <p><b>Status:</b> <xsl:value-of select="@status"/></p>
+                            <p><b>Opis:</b> <xsl:value-of select="opis"/></p>
+                            <a href="{link}" target="_blank">Dowiedz sie wiecej!</a>
                         </div>
                     </div>
                 </div>
@@ -150,7 +150,7 @@
                             </p>
                             <xsl:choose>
                                 <xsl:when test="kraje/@graniczny='tak'">
-                                    <p>Ten szczyt lezy na granicy dwoch panstw</p>
+                                    <p>Ten szczyt lezy na granicy dwoch panstw.</p>
                                 </xsl:when>
                                 <xsl:otherwise>
                                     <p>Ten szczyt lezy w jednym kraju.</p>

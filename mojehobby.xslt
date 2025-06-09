@@ -16,81 +16,86 @@
                 <title>Moje hobby - turystyka gorska</title>
                 <style>
                     body {
-                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                    background: linear-gradient(to bottom, #A9BCD0, #D8DBE2);
-                    margin: 0;
-                    padding: 20px;
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        background: linear-gradient(to bottom, #A9BCD0, #D8DBE2);
+                        margin: 0;
+                        padding: 20px;
                     }
-                    naglowek {
-                        background-color: #D8DBE2;
-                        width: 100%
+                    .naglowek {
+                        border: 1px solid #d0d0d0;
+                        background-color: #ffffff;
+                        box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+                        border-radius: 10px;
+                        max-width: 100%;
+                        margin: 0;
+                        padding: 20px;
                     }
                     h1, h2, h3 {
-                    color: #1B1B1E;
-                    text-align: center;
-                    margin-bottom: 10px;
+                        color: #1B1B1E;
+                        text-align: center;
+                        margin-bottom: 10px;
                     }
                     h1 {
-                    font-size: 2.2em;
+                        font-size: 2.2em;
                     }
                     h2 {
-                    margin-top: 10px;
-                    font-size: 1.5em;
+                        margin-top: 10px;
+                        font-size: 1.5em;
                     }
                     h3 {
-                    margin-top: 30px;
-                    font-size: 1.3em;
-                    text-transform: capitalize;
+                        margin-top: 30px;
+                        font-size: 1.3em;
+                        text-transform: capitalize;
                     }
                     .szczyt {
-                    border: 1px solid #d0d0d0;
-                    background-color: #ffffff;
-                    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-                    border-radius: 10px;
-                    margin: 20px auto;
-                    padding: 15px;
-                    max-width: 900px;
-                    transition: transform 0.2s;
+                        border: 1px solid #d0d0d0;
+                        background-color: #ffffff;
+                        box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+                        border-radius: 10px;
+                        margin: 20px auto;
+                        padding: 15px;
+                        max-width: 900px;
+                        transition: transform 0.2s;
                     }
                     .szczyt:hover {
-                    transform: scale(1.01);
+                        transform: scale(1.01);
                     }
                     .nazwa-szczytu {
-                    text-align: center;
-                    font-size: 1.6em;
-                    font-weight: bold;
-                    margin-bottom: 10px;
-                    color: #1B1B1E;
+                        text-align: center;
+                        font-size: 1.6em;
+                        font-weight: bold;
+                        margin-bottom: 10px;
+                        color: #1B1B1E;
                     }
                     .szczyt-content {
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: 20px;
-                    justify-content: center;
-                    align-items: flex-start;
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 20px;
+                        justify-content: center;
+                        align-items: flex-start;
                     }
                     .szczyt-content img {
-                    max-width: 300px;
-                    height: auto;
-                    border-radius: 8px;
-                    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+                        max-width: 300px;
+                        height: auto;
+                        border-radius: 8px;
+                        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
                     }
                     .szczyt-opis {
-                    flex: 1;
-                    min-width: 250px;
+                        flex: 1;
+                        min-width: 250px;
                     }
                     .szczyt-opis p {
-                    margin: 8px 0;
-                    font-size: 1.5em;
+                        margin: 8px 0;
+                        font-size: 1.5em;
                     }
                     a {
-                    color: #0077cc;
-                    text-decoration: none;
-                    font-weight: bold;
+                        color: #0077cc;
+                        text-decoration: none;
+                        font-weight: bold;
                     }
                     a:hover {
-                    text-decoration: underline;
-                    color: #005599;
+                        text-decoration: underline;
+                        color: #005599;
                     }
                 </style>
             </head>
@@ -108,7 +113,7 @@
 
     <!-- Nazwany szablon -->
     <xsl:template name="pokazZdobyte">
-        <h2>Zdobyte szczyty</h2>
+        <h1>Zdobyte szczyty</h1>
         <xsl:for-each select="/hobby/zdobyte/pasmo_górskie/*">
             <h3><xsl:value-of select="name()"/></h3>
             <xsl:for-each select="szczyt">
@@ -135,7 +140,7 @@
     </xsl:template>
 
     <xsl:template name="pokazPlanowane">
-        <h2>Planowane wyprawy</h2>
+        <h1>Planowane wyprawy</h1>
         <xsl:for-each select="/hobby/planowane/kontynent/*">
             <h3><xsl:value-of select="name()"/></h3>
             <xsl:for-each select="szczyt_planowany">

@@ -6,13 +6,13 @@
   <xsl:output method="xml" indent="yes"/>
   
   <xsl:template match="/hobby">
-    <nowe_hobby>
+    <Zainteresowania>
       <xsl:apply-templates select="informacje"/>
       <lista_szczytow>
         <xsl:apply-templates select="zdobyte/pasmo_górskie//szczyt"/>
         <xsl:apply-templates select="planowane/kontynent//szczyt_planowany"/>
       </lista_szczytow>
-    </nowe_hobby>
+    </Zainteresowania>
   </xsl:template>
 
   <!-- 2. Nowe elementy i atrybuty -->

@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
     <xsl:output method="html" encoding="UTF-8" indent="yes"/>
 
-    <!-- Zmienne globalne -->
+
+
     <xsl:variable name="nazwaAutor">
         <xsl:value-of select="/hobby/informacje/autor"/>
     </xsl:variable>
 
-    <!-- Styl CSS -->
+
+
     <xsl:template match="/">
         <html>
             <head>
@@ -111,7 +113,8 @@
         </html>
     </xsl:template>
 
-    <!-- Nazwany szablon -->
+
+
     <xsl:template name="pokazZdobyte">
         <h1>Zdobyte szczyty</h1>
         <xsl:for-each select="/hobby/zdobyte/pasmo_górskie/*">
@@ -175,7 +178,8 @@
         </xsl:for-each>
     </xsl:template>
 
-    <!-- Szablon dopasowany do atrybutu -->
+
+
     <xsl:template match="@student">
         <span>Student: <xsl:value-of select="."/></span>
     </xsl:template>

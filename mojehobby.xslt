@@ -92,6 +92,7 @@
             </head>
             <body>
                 <h1>Moje hobby: Turystyka gorska</h1>
+                <h2>Strona ukazuje moje hobby, czyli turystyke gorska, przedstawiam jedne z piekniejszych z polskich szczytow oraz moje plany co do zdobywania kolejnych, tym razem poza Polska.</h2>
                 <xsl:call-template name="pokazZdobyte"/>
                 <xsl:call-template name="pokazPlanowane"/>
                 <h2>Autor: <xsl:value-of select="$nazwaAutor"/></h2>
@@ -113,13 +114,13 @@
                     <div class="szczyt-content">
                         <img src="{zdjecie}" alt="{nazwa}"/>
                         <div class="szczyt-opis">
-                            <p><b>Wysokosc:</b> <xsl:value-of select="wysokość"/> m n.p.m.</p>
                             <xsl:if test="@najwyższy='tak'">
                                 <p style="color:#005599;">To najwyzszy szczyt w tym pasmie gorskim!</p>
                             </xsl:if>
-                            <p><b>Trudnosc:</b> <xsl:value-of select="@trudność"/></p>
-                            <p><b>Status:</b> <xsl:value-of select="@status"/></p>
-                            <p><b>Opis:</b> <xsl:value-of select="opis"/></p>
+                            <p><b>Wysokosc: </b> <xsl:value-of select="wysokość"/> m n.p.m.</p>
+                            <p><b>Trudnosc: </b> <xsl:value-of select="@trudność"/></p>
+                            <p><b>Status: </b> <xsl:value-of select="@status"/></p>
+                            <p><b>Opis: </b> <xsl:value-of select="opis"/></p>
                             <a href="{link}" target="_blank">Dowiedz sie wiecej!</a>
                         </div>
                     </div>
@@ -141,8 +142,8 @@
                     <div class="szczyt-content">
                         <img src="{zdjecie}" alt="{nazwa}"/>
                         <div class="szczyt-opis">
-                            <p><b>Wysokosc:</b> <xsl:value-of select="wysokość"/> m n.p.m.</p>
-                            <p><b>Kraje:</b>
+                            <p><b>Wysokosc: </b> <xsl:value-of select="wysokość"/> m n.p.m.</p>
+                            <p><b>Kraje: </b>
                                 <xsl:for-each select="kraje/kraj">
                                     <xsl:value-of select="."/>
                                     <xsl:if test="position() != last()"> – </xsl:if>
@@ -150,10 +151,10 @@
                             </p>
                             <xsl:choose>
                                 <xsl:when test="kraje/@graniczny='tak'">
-                                    <p>Ten szczyt lezy na granicy dwoch panstw.</p>
+                                    <p style="color:#005599;">Ten szczyt lezy na granicy dwoch panstw.</p>
                                 </xsl:when>
                                 <xsl:otherwise>
-                                    <p>Ten szczyt lezy w jednym kraju.</p>
+                                    <p style="color:#005599;">Ten szczyt lezy w jednym kraju.</p>
                                 </xsl:otherwise>
                             </xsl:choose>
                         </div>

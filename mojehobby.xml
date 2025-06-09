@@ -98,6 +98,7 @@
                     <kraje graniczny="nie">
                         <kraj>Tanzania</kraj>
                     </kraje>
+                    <link>https://pl.wikipedia.org/wiki/Kilimand%C5%BCaro</link>
                     <zdjecie>https://drytooling.pl/images/igallery/resized/kilimandzaro-91/kilimandzaro-6-5000-4000-100-c.jpg</zdjecie>
                 </szczyt_planowany>
             </afryka>
@@ -109,6 +110,7 @@
                         <kraj>Francja</kraj>
                         <kraj>Wlochy</kraj>
                     </kraje>
+                    <link>https://pl.wikipedia.org/wiki/Mont_Blanc</link>
                     <zdjecie>https://upload.wikimedia.org/wikipedia/commons/d/d7/Mont_Blanc_from_Punta_Helbronner%2C_2010_July.JPG</zdjecie>
                 </szczyt_planowany>
             </europa>
@@ -120,6 +122,7 @@
                         <kraj>Nepal</kraj>
                         <kraj>Chiny</kraj>
                     </kraje>
+                    <link>https://pl.wikipedia.org/wiki/Mount_Everest</link>
                     <zdjecie>https://bi.im-g.pl/im/68/75/1e/z31937384Q,Chca-zdobyc-Mount-Everest-w-7-dni---Jestesmy-zajet.jpg</zdjecie>
                 </szczyt_planowany>
             </azja>

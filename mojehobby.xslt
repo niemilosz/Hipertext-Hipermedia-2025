@@ -21,6 +21,10 @@
                     margin: 0;
                     padding: 20px;
                     }
+                    naglowek {
+                        background-color: #D8DBE2;
+                        width: 100%
+                    }
                     h1, h2, h3 {
                     color: #1B1B1E;
                     text-align: center;
@@ -91,8 +95,10 @@
                 </style>
             </head>
             <body>
-                <h1>Moje hobby: Turystyka gorska</h1>
-                <h2>Strona ukazuje moje hobby, czyli turystyke gorska, przedstawiam jedne z piekniejszych z polskich szczytow oraz moje plany co do zdobywania kolejnych, tym razem poza Polska.</h2>
+                <div class="naglowek">
+                    <h1>Moje hobby: Turystyka gorska</h1>
+                    <h2>Strona ukazuje moje hobby, czyli turystyke gorska, przedstawiam jedne z piekniejszych z polskich szczytow oraz moje plany co do zdobywania kolejnych, tym razem poza Polska.</h2>
+                </div>
                 <xsl:call-template name="pokazZdobyte"/>
                 <xsl:call-template name="pokazPlanowane"/>
                 <h2>Autor: <xsl:value-of select="$nazwaAutor"/></h2>
@@ -119,7 +125,6 @@
                             </xsl:if>
                             <p><b>Wysokosc: </b> <xsl:value-of select="wysokość"/> m n.p.m.</p>
                             <p><b>Trudnosc: </b> <xsl:value-of select="@trudność"/></p>
-                            <p><b>Status: </b> <xsl:value-of select="@status"/></p>
                             <p><b>Opis: </b> <xsl:value-of select="opis"/></p>
                             <a href="{link}" target="_blank">Dowiedz sie wiecej!</a>
                         </div>
@@ -157,6 +162,7 @@
                                     <p style="color:#005599;">Ten szczyt lezy w jednym kraju.</p>
                                 </xsl:otherwise>
                             </xsl:choose>
+                            <a href="{link}" target="_blank">Dowiedz sie wiecej!</a>
                         </div>
                     </div>
                 </div>
